@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+ <!-- saved from url=(0068)file:///Users/kevinbaffour/Desktop/codeDesign%20Portfolio/R2-D2.html -->
+ <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>
+  <canvas id="myCanvas" width="600" height="600" style="border:1px solid #d3d3d3;">
+  Your browser does not support the HTML5 canvas tag.</canvas>
+  <script>
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+
+  var y = canvas.width / 2;
+  var x = canvas.height / 2;
+
+  //arc(x,y,r,startangle,endangle)
+  
+  ctx.lineWidth = 2; //thickens the lines//
+
+  function drawCircle(r){
+     ctx.beginPath();
+     ctx.arc(x,325,r,0,2*Math.PI);
+     ctx.stroke();
+      
+  };
+
+  //left semi circle//
+ ctx.beginPath();
+ ctx.arc(x-86, 314, 15, -1.9, 0.6 * Math.PI);
+ ctx.stroke();
+
+ ctx.beginPath();
+ ctx.arc(x+75,317,15,0,2*Math.PI);
+ ctx.stroke();
+ (function(){
+
+  drawCircle(15);
+
+
+  //==============oval==================//
+   var canvas = document.getElementById('myCanvas');
+       var context = canvas.getContext('2d');
+       var centerX = -21;
+       var centerY = -116;
+       var radius = 6.5;
+
+       // save state
+       ctx.save();
+
+       // translate context
+       ctx.translate(canvas.width / 2, canvas.height / 2);
+
+       // scale context horizontally
+       ctx.scale(1, 2);
+
+       // draw circle which will be stretched into an oval
+       ctx.beginPath();
+       ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+
+       // restore to original state
+       ctx.restore();
+
+  //Top torso curve 1//
+
+ ctx.moveTo(x-90,120);
+ ctx.quadraticCurveTo(x+15, 100, 390, 120);
+ ctx.stroke();
+
+  //Top torso curve 2//
+
+ ctx.moveTo(x-90,100);
+ ctx.quadraticCurveTo(x+15, 80, 390, 100);
+ ctx.stroke();
+
+  //Top torso curve //
+
+ ctx.moveTo(x-90,95);
+ ctx.quadraticCurveTo(x+10, 75, 390, 95);
+ ctx.stroke();
+  
+  //drawCircle(20);
+  })();
+
+ //Top circle//
+ ctx.beginPath();
+ ctx.arc(x,29,12,0,2*Math.PI);
+ ctx.stroke();
+
+ ctx.beginPath();
+ ctx.arc(x+10,68,8,0,2*Math.PI);
+ ctx.stroke();
+
+ ctx.beginPath();
+ ctx.arc(x+55,60,10,0,2*Math.PI);
+ ctx.stroke();
+
+ ctx.strokeRect(x-2,55, 25, 25);
+
+ //little semicircle//
+ ctx.beginPath();
+ ctx.arc(x+55, 60, 20, 1.9, -0.9 * Math.PI);
+ ctx.stroke();
+
+ ctx.moveTo(x+35,y-245);
+ ctx.lineTo(x+52,50);
+ ctx.stroke()
+ //////////////////////////////////needs work!!!
+ ctx.moveTo(x+60,y-231);
+ ctx.lineTo(x+47,y-220);
+ ctx.stroke()
+ /////////////////////////////////
+
+
+
+ //little circles 1 //
+ ctx.beginPath();
+ ctx.arc(x+20,y+120,7,0,2*Math.PI);
+ ctx.stroke();
+ ctx.fillStyle = 'grey';
+ ctx.fill();
+
+ //little circles2//
+ ctx.beginPath();
+ ctx.arc(x-20,y+120,7,0,2*Math.PI);
+ ctx.stroke();
+ ctx.fillStyle = 'grey';
+ ctx.fill();
+
+ //bolt 1//
+ ctx.beginPath();
+ ctx.arc(x-26,40,4,0,2*Math.PI);
+ ctx.stroke();
+ ctx.fillStyle = 'grey';
+ ctx.fill();
+
+ //bolt 2//
+ ctx.beginPath();
+ ctx.arc(x+26,40,4,0,2*Math.PI);
+ ctx.stroke();
+ ctx.fillStyle = 'grey';
+ ctx.fill();
+
+ //head semi circles//
+ function head (){
+  ctx.beginPath();
+  ctx.arc(x, y-210, 90, 0, Math.PI, true);
+  ctx.strokeStyle = 'black';
+  ctx.stroke();
+ };
+ head();
+
+ //right  line//
+ ctx.moveTo(x+90,y+40);//straight line for elbow curve..
+ ctx.lineTo(x+90,y-210);
+ ctx.stroke();
+
+ //leftline//
+
+ ctx.moveTo(x-90,y+40);
+ ctx.lineTo(x-90,y-210);
+ ctx.stroke();
+
+ //right elbow line//
+
+ ctx.moveTo(x+120,y+10);
+ ctx.quadraticCurveTo(x+114, y-29, 420, 240);
+ ctx.stroke();
+
+ //right-elbow second line//
+ ctx.moveTo(x+110,y+10);
+ ctx.quadraticCurveTo(x+107, y-50, 410, 240);
+ ctx.stroke();
+
+ //left elbow//
+ ctx.moveTo(x-120,y-70);
+ ctx.quadraticCurveTo(x-114, y-35, 180, 310);
+ ctx.stroke();
+
+ //left-elbow secondline//
+ ctx.moveTo(x-110,y-70);
+ ctx.quadraticCurveTo(x-107, y-30, 190, 310);
+ ctx.stroke();
+
+ //top belly line1//
+ ctx.moveTo(x-90,y+40);
+ //ctx.lineTo(x-120,-10);
+ ctx.quadraticCurveTo(x+15, y+65, 390, 339);
+ ctx.stroke();
+
+ //lower belly line2//
+ ctx.moveTo(x-80,y+65);
+ ctx.quadraticCurveTo(x+20, y+84, 377, 366);
+ ctx.stroke();
+
+ //right short line for belly line 2//
+ ctx.moveTo(x+90, y+40);
+ ctx.lineTo(x+75, y+68);
+ ctx.stroke();
+
+ //left short line for belly line 2//
+ ctx.moveTo(x-80, y+65);
+ ctx.lineTo(x-90, y+40);
+ ctx.stroke();
+
+ //short left line from lower belly//
+ ctx.moveTo(x-30, y+72);
+ ctx.lineTo(x-22, y+115);
+ ctx.stroke();
+
+ //short right line from lower belly//
+ ctx.moveTo(x+30, y+74);
+ ctx.lineTo(x+22, y+115);
+ ctx.stroke();
+
+ //lowershort right line from lower belly//
+ ctx.moveTo(x+23, y+125);
+ ctx.lineTo(x+35, y+165);
+ ctx.stroke();
+
+ //lowershort left line from lower belly//
+ ctx.moveTo(x-23, y+125);
+ ctx.lineTo(x-35, y+165);
+ ctx.stroke();
+
+ //lowershort right join//
+ ctx.moveTo(x+35, y+165);
+ ctx.lineTo(x+48, y+254);
+ ctx.stroke();
+
+ //lowershort left join//
+ ctx.moveTo(x-35, y+165);
+ ctx.lineTo(x-48, y+254);
+ ctx.stroke();
+
+ //straight line//
+ ctx.moveTo(x+50, y+254);
+ ctx.lineTo(x-50, y+254);
+ ctx.stroke();
+
+ //left side line//
+ ctx.moveTo(x-20, y+165);
+ ctx.lineTo(x-48, y+254);
+ ctx.stroke();
+
+ //smaller left side line//
+ ctx.moveTo(x-12, y+220);
+ ctx.lineTo(x-23, y+255);
+ ctx.stroke();
+
+ //right side line//
+ ctx.moveTo(x+20, y+165);
+ ctx.lineTo(x+48, y+254);
+ ctx.stroke();
+
+ //smaller right side line//
+ ctx.moveTo(x+12, y+220);
+ ctx.lineTo(x+23, y+254);
+ ctx.stroke();
+
+ //lower straight line//
+ ctx.moveTo(x+22, y+165);
+ ctx.lineTo(x-22, y+165);
+ ctx.stroke();
+ //----------------------------
+ ctx.moveTo(x+12, y+220);
+ ctx.lineTo(x-12, y+220);
+ ctx.stroke();
+
+ ctx.moveTo(x+50, y+254);
+ ctx.lineTo(x-50, y+254);
+ ctx.stroke();
+
+ ctx.moveTo(x+20, y+253);
+ ctx.lineTo(x-20, y+253);
+ ctx.stroke();
+
+ //right fist//
+ ctx.moveTo(x+100, y+70);
+ ctx.lineTo(x+118-48, y+160);
+ ctx.stroke();
+
+ ctx.moveTo(x+135, y+70);
+ ctx.lineTo(x+118+48, y+160);
+ ctx.stroke();
+
+ ctx.moveTo(x+164, y+160);
+ ctx.lineTo(x+118-50, y+160);
+ ctx.stroke();
+
+ //left fist//
+ ctx.moveTo(x-135, y+70);
+ ctx.lineTo(x-118-48, y+160);
+ ctx.stroke();
+
+
+ //right fistline//
+ ctx.moveTo(x-118+20, y+70);
+ ctx.lineTo(x-118+44, y+160);
+ ctx.stroke();
+
+ //-----------stroke lines----
+ ctx.moveTo(x-118,y+69);
+ ctx.lineTo(x-118,400);
+ ctx.stroke();
+
+ ctx.moveTo(x+115,y+69);
+ ctx.lineTo(x+115,400);
+ ctx.stroke();
+
+ ctx.moveTo(x,y+75);
+ ctx.lineTo(x,400);
+ ctx.stroke();
+
+ ctx.moveTo(x,y+165);
+ ctx.lineTo(x,500);
+ ctx.stroke();
+
+ //bottom line//
+ ctx.moveTo(x-118+46, y+160);
+ ctx.lineTo(x-118-50, y+160);
+ ctx.stroke();
+
+ //Right-shadowline//
+ ctx.moveTo(x+118-45, y+155);
+ ctx.quadraticCurveTo(370, 475, 340, 372);
+ ctx.stroke();
+
+ //Left-shadowline//
+ ctx.moveTo(x-75, y+162);
+ ctx.quadraticCurveTo(240, 450, 258, 372);
+ ctx.stroke();
+
+ //top small line//
+ ctx.moveTo(x+30, y-290);
+ ctx.lineTo(x-30, 10);
+ ctx.stroke();
+
+ //bottom small line//
+ ctx.moveTo(x+35, y-250);
+ ctx.lineTo(x-35, 50);
+ ctx.stroke();
+
+ //top right curve//
+ ctx.moveTo(x+30,y-290);
+ ctx.quadraticCurveTo(x+35, y-275, 335, 50);
+ ctx.stroke();
+
+ //top left curve//
+ ctx.moveTo(x-30,y-290);
+ ctx.quadraticCurveTo(x-35, y-275, 265, 50);
+ ctx.stroke();
+
+ function roundRect(x, y, w, h, radius)
+ {
+   
+   var r = x + w;
+   var b = y + h;
+   ctx.beginPath();
+   ctx.strokeStyle="black";
+   ctx.lineWidth="2";
+   ctx.moveTo(x+radius, y);
+   ctx.lineTo(r-radius, y);
+   ctx.quadraticCurveTo(r, y, r, y+radius);
+   ctx.lineTo(r, y+h-radius);
+   ctx.quadraticCurveTo(r, b, r-radius, b);
+   ctx.lineTo(x+radius, b);
+   //ctx.quadraticCurveTo(x, b, x, b-radius);
+   //ctx.lineTo(x, y+radius);
+   //ctx.quadraticCurveTo(x, y, x+radius, y);
+   ctx.stroke();
+   ctx.lineWidth = 1;
+
+   ctx.fillStyle = "silver";
+ ctx.fill();
+
+ }
+ //top right shoulder//
+ roundRect(x+80, y-170, 60, 108, 10);
+
+ //top left shoulder//
+ roundRect(x-80, 230, -60, -100, -10);
+
+ //righthand//
+ roundRect(x+80, 310, 60, 60, 10);
+
+ //lefthand//
+ roundRect(x-80, y+70, -60, -60, -10);
+
+ //rectangles on head 1//
+ ctx.strokeRect(x-60, y-249, 20, 30);
+
+ //squares on hand//
+ ctx.beginPath();
+ ctx.rect(x-125, y+30, 20, 20);
+ ctx.fillStyle = "#373738";
+ ctx.fill();
+
+ ctx.beginPath();
+ ctx.rect(x+102, y+30, 20, 20);
+ ctx.fillStyle = "#373738";
+ ctx.fill();
+
+
+ //middle squares//
+
+ ctx.beginPath();
+ ctx.rect(x-25, y-140, 50, 110);
+ ctx.fillStyle = "blue";
+ ctx.fill();
+
+ ctx.beginPath();
+ ctx.rect(x-15, y-130,30,30);
+ ctx.fillStyle = "silver";
+ ctx.fill();
+
+ ctx.beginPath();
+ ctx.rect(x-15, y-70,30,30);
+ ctx.fillStyle = "silver";
+ ctx.fill();
+
+ //--R2-D2---//
+
+ ctx.font = "40px Arial";
+ ctx.fillText("R2-D2", 12, 49);
+
+ //*****************************************//
+
+
+  </script>
+
+  
+  
+ </body></html>
