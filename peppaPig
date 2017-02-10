@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Peppa pig</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="1260" height="680" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.</canvas>
+
+		<script>
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+//straight line//
+	ctx.moveTo(10, 65);
+	ctx.lineTo(10, 65);
+	ctx.stroke();
+
+//background bottom half//
+	ctx.beginPath();
+	ctx.rect(0, 0, 1260, 680);
+	ctx.fillStyle = "#74dff7";
+	ctx.fill();
+
+//car//
+	ctx.beginPath();
+    ctx.arc(630, 500, 450, 0, Math.PI, true);
+    ctx.closePath();
+    ctx.lineWidth = 10;
+    ctx.fillStyle = 'red';
+    ctx.fill();
+    ctx.strokeStyle = '#550000';
+    ctx.stroke();
+
+      //road//
+	ctx.beginPath();
+	ctx.rect(0, 550, 1260, 680);
+	ctx.fillStyle = "#e2aa41";
+	ctx.fill();
+
+    //front tyres1//
+    ctx.beginPath();
+    ctx.arc(340, 510, 50, 0, Math.PI, false);
+    ctx.closePath();
+    //ctx.lineWidth = 10;
+    ctx.fillStyle = '#3b3c3d';
+    ctx.fill();
+    ctx.strokeStyle = '#3b3c3d';
+    ctx.stroke();
+
+    //front tyres1//
+    ctx.beginPath();
+    ctx.arc(760, 510, 50, 0, Math.PI, false);
+    ctx.closePath();
+    //ctx.lineWidth = 10;
+    ctx.fillStyle = '#3b3c3d';
+    ctx.fill();
+    ctx.strokeStyle = '#3b3c3d';
+    ctx.stroke();
+
+    //front tyres2//
+    ctx.beginPath();
+    ctx.arc(500, 500, 80, 0, Math.PI, false);
+    ctx.closePath();
+    ctx.lineWidth = 5;
+    ctx.fillStyle = 'grey';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+
+//back tyre1//
+    ctx.beginPath();
+    ctx.arc(920, 500, 80, 0, Math.PI, false);
+    ctx.closePath();
+    ctx.lineWidth = 5;
+    ctx.fillStyle = 'grey';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(500, 500, 40, 0, Math.PI, false);
+    ctx.closePath();
+    ctx.lineWidth = 5;
+    ctx.fillStyle = 'black';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+
+//back tyre alloy//
+    ctx.beginPath();
+    ctx.arc(920, 500, 40, 0, Math.PI, false);
+    ctx.closePath();
+    ctx.lineWidth = 5;
+    ctx.fillStyle = 'black';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+
+
+//bonnet lip//
+    ctx.beginPath();
+    ctx.arc(300, 300, 60, 5, Math.PI, false);
+    //ctx.closePath();
+    ctx.lineWidth = 2;
+    ctx.fillStyle = 'red';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+    
+
+
+//ctx.arc(500, 225, 10, 10, 2 * Math.PI);
+//ctx.stroke();
+
+//front fender1//
+    ctx.beginPath();
+    ctx.arc(500, 500, 100, 0, Math.PI, true);
+    ctx.closePath();
+    ctx.lineWidth = 5;
+    ctx.fillStyle = 'red';
+    ctx.fill();
+    ctx.strokeStyle = '#550000';
+    ctx.stroke();
+
+     //back fender2//
+    ctx.beginPath();
+    ctx.arc(920, 500, 100, 0, Math.PI, true);
+    ctx.closePath();
+    ctx.lineWidth = 5;
+    ctx.fillStyle = 'red';
+    ctx.fill();
+    ctx.strokeStyle = '#550000';
+    ctx.stroke();
+
+//car fill top//
+	ctx.beginPath();
+	ctx.rect(0, 0, 1260, 300);
+	ctx.fillStyle = "#74dff7";
+	ctx.fill();
+
+
+	//--------------------------------
+
+
+
+	var x = 100,
+    y = 75,
+    // Radii of the white glow.
+    innerRadius = 7,
+    outerRadius = 70,
+    // Radius of the entire circle.
+    radius = 60;
+
+	var gradient = ctx.createRadialGradient(x, y, innerRadius, x, y, outerRadius);
+	gradient.addColorStop(0, 'yellow');
+	gradient.addColorStop(1, '#74dff7');
+
+	ctx.arc(x, y, radius, 0, 3 * Math.PI);
+
+	ctx.fillStyle = gradient;
+	ctx.fill();
+
+	//--------------------------------
+
+	//carlights///
+
+	ctx.beginPath();
+	ctx.arc(350, 430, 32, 0, 2 * Math.PI);
+	ctx.stroke();
+	ctx.fillStyle = '#ced3db';
+	ctx.fill();
+
+	ctx.arc(200, 430, 28, 0, 2 * Math.PI);
+	ctx.stroke();
+	ctx.fillStyle = '#ced3db';
+	ctx.fill();
+
+	//peppa pig//
+ 	ctx.beginPath();
+    ctx.arc(590, 200, 92, +4.5, Math.PI, false);
+    ctx.lineWidth = 5;
+    ctx.fillStyle = 'lightpink';
+    ctx.fill();
+    //ctx.strokeStyle = 'brown';
+    ctx.stroke();
+
+    //nose//
+	ctx.fillStyle="lightpink";
+	ctx.fillRect(470,110,100,80);
+
+	//peppas smile//
+
+	ctx.beginPath();
+	ctx.arc(543, 210, 22, 1.1, 1.1 * Math.PI, false);
+	ctx.stroke();
+
+    //spectacles//
+
+	ctx.beginPath();
+	ctx.arc(520, 120, 20, 0, 2 * Math.PI);
+	ctx.stroke();
+	ctx.fillStyle = '#ced3db';
+	ctx.fill();
+
+	ctx.arc(580, 140, 20, 0, 2 * Math.PI);
+	ctx.stroke();
+	ctx.fillStyle = '#ced3db';
+	ctx.fill();
+
+	ctx.beginPath();
+	ctx.arc(498,152,30,0,2*Math.PI);
+	ctx.stroke();
+	ctx.fillStyle = 'lightpink';
+	ctx.fill();
+
+//door1//
+	ctx.moveTo(620,210);
+	ctx.lineTo(620,500);
+	ctx.stroke();
+//door2//
+	ctx.moveTo(800,300);
+	ctx.lineTo(800,500);
+	ctx.stroke();
+
+	//windshield-left//
+	ctx.moveTo(230,300);
+	ctx.lineTo(230,210);
+	ctx.stroke();
+	ctx.lineWidth = 5;
+
+	//antenna//
+
+	ctx.moveTo(170,200);
+	ctx.quadraticCurveTo(190, 300, 210, 350);
+	ctx.stroke();
+
+	//steer stick//
+
+	ctx.moveTo(290,300);
+	ctx.lineTo(380,250);
+	ctx.stroke();
+
+	//peppas shirt//
+
+	//ctx.moveTo(500,500);
+	//ctx.quadraticCurveTo(300, 40, 30, 250);
+	//ctx.stroke();
+
+	ctx.moveTo(510,250);
+	ctx.quadraticCurveTo(468, 300, 510, 300);
+	ctx.stroke();
+
+	//antenna dot//
+	ctx.beginPath();
+	ctx.arc(170,200,4,0,2*Math.PI);
+	ctx.stroke();
+
+	//bonnet lock//
+	ctx.beginPath();
+	ctx.arc(290,340,4,0,2*Math.PI);
+	ctx.stroke();
+
+//door handle//
+	ctx.fillStyle="#3b3c3d";
+	ctx.fillRect(730,320,50,20);
+
+	//peppas eyes1//
+
+	ctx.beginPath();
+	ctx.arc(580,140,12,0,2*Math.PI);
+	ctx.stroke();
+	ctx.fillStyle = 'white';
+	ctx.fill();
+
+	//pupil//
+	ctx.beginPath();
+	ctx.arc(580,140,2,0,2*Math.PI);
+	ctx.stroke();
+
+
+	//peppas eyes2//
+
+	ctx.beginPath();
+	ctx.arc(520,120,12,0,2*Math.PI);
+	ctx.stroke();
+	ctx.fillStyle = 'white';
+	ctx.fill();
+
+	//pupil//
+	ctx.beginPath();
+	ctx.arc(520,120,2,0,2*Math.PI);
+	ctx.stroke();
+
+//nosetrills//
+ctx.beginPath();
+ctx.arc(510,145,2,0,2*Math.PI);
+ctx.stroke();
+
+//nosetrills2//
+ctx.beginPath();
+ctx.arc(483,145,2,0,2*Math.PI);
+ctx.stroke();
+
+//steering wheel//
+ctx.beginPath();
+	ctx.arc(380,254,35,0,2*Math.PI);
+	ctx.stroke();
+
+
+//car top straight line//
+ctx.moveTo(1040, 300);
+ctx.lineTo(220, 300);
+ctx.stroke();
+
+//car windshield straight line//
+ctx.moveTo(625, 210);
+ctx.lineTo(227, 210);
+ctx.stroke();
+
+//bird in the sky//
+
+	ctx.moveTo(60,110);
+	ctx.lineTo(110,90);
+	ctx.stroke();
+
+	ctx.moveTo(40,80);
+	ctx.lineTo(110,90);
+	ctx.stroke();
+
+
+//=========================================
+
+//road//
+	//ctx.beginPath();
+	//ctx.rect(0, 582, 1260, 680);
+	//ctx.fillStyle = "#e2aa41";
+	//ctx.fill();
+
+	//ctx.rect(0, 0, 1260, 680);
+	
+
+
+
+
+		</script>
+	</body>
+	</html>	
