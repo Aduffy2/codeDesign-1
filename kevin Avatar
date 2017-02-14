@@ -1,0 +1,219 @@
+<!DOCTYPE html><html><body>
+
+<canvas id="myCanvas" width="600" height="600" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<script>
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+var y = canvas.width / 2;
+var x = canvas.height / 2;
+
+//arc(x,y,r,startangle,endangle)
+
+var my_gradient = ctx.createLinearGradient(0, 0, 0, 600);
+my_gradient.addColorStop(0, "pink");
+my_gradient.addColorStop(1, "teal");
+ctx.fillStyle = my_gradient;
+ctx.fillRect(0, 0, 1260, 680);
+
+ctx.lineWidth = 2;
+
+//top of head//
+function drawCircle(r){
+   ctx.beginPath();
+   ctx.arc(x+5,232,r,3.1,2*Math.PI);
+   ctx.stroke();
+   
+   ctx.fillStyle = '#8C4F12';
+   ctx.fill();
+   //ctx.strokeStyle = 'red';
+      //ctx.stroke();
+};
+
+//how to control extra drawCircle functions//
+
+(function(){
+drawCircle(155);
+
+})();
+
+//beard//
+ctx.beginPath();
+	ctx.moveTo(x-146,302);
+	ctx.bezierCurveTo(x-197, 744, 515, 645, 456, 310);
+ctx.fillStyle = 'black';
+    ctx.fill();
+	ctx.stroke();
+
+//facial drawing using bezierCurveTo//
+    ctx.beginPath();
+	ctx.moveTo(x-150,230);
+	ctx.bezierCurveTo(x-130, 701, 460, 600, 460, 230);
+	ctx.fillStyle = '#8C4F12';
+    ctx.fill();
+	ctx.stroke();
+
+//eyebrows right//
+	ctx.beginPath();
+	ctx.moveTo(x+120,y-70);
+	ctx.lineTo(340,250);
+	ctx.lineTo(x+120,245);
+	ctx.lineTo(x+145,y-35);
+	ctx.lineTo(x+120,y-72);
+	ctx.fillStyle = 'black';
+    ctx.fill();
+	ctx.stroke();
+
+//eyebrows left//
+	ctx.moveTo(x-113,y-73);
+	ctx.lineTo(270,250);
+	ctx.lineTo(x-120,245);
+	ctx.lineTo(x-142,y-30);
+	ctx.lineTo(x-114,y-73);
+	ctx.fillStyle = 'black';
+    ctx.fill();
+	ctx.stroke();
+
+//right ear//
+	ctx.beginPath();
+	ctx.arc(x+130, 300, 60, -1.0, 0.4 * Math.PI);
+	ctx.fillStyle = '#8C4F12';
+    ctx.fill();
+	ctx.stroke();
+
+//left ear//
+	ctx.beginPath();
+	ctx.arc(x-117, 300, 60, 1.9, -0.7 * Math.PI);
+	ctx.fillStyle = '#8C4F12';
+    ctx.fill();
+	ctx.stroke()
+
+//inner ear1..//
+	ctx.beginPath();
+	ctx.arc(x-117, 300, 50, 2.9, 1.2 * Math.PI);
+	ctx.fillStyle = '#693909';
+    ctx.fill();
+	ctx.stroke()
+
+//inner ear2..//
+	ctx.beginPath();
+	ctx.arc(x+130, 300, 50, -1.0, -1.9 * Math.PI);
+	ctx.fillStyle = '#693909';
+    ctx.fill();
+	ctx.stroke();
+
+//eyes left//
+	 ctx.beginPath();
+      ctx.arc(x-80, y, 35, 0, Math.PI, true);
+      ctx.lineWidth = 3;
+      ctx.fillStyle = 'white';
+      ctx.fill();
+      ctx.strokeStyle = 'black';
+      ctx.stroke();
+
+//eyes right//
+	 ctx.beginPath();
+      ctx.arc(x+80, y, 35, 0, Math.PI, true);
+      ctx.lineWidth = 3;
+      ctx.fillStyle = 'white';
+      ctx.fill();
+      ctx.strokeStyle = 'black';
+      ctx.stroke();
+
+//pupils1//
+	ctx.beginPath();
+	ctx.arc(x+80, y-15, 10, 0, 2 * Math.PI);
+	ctx.fillStyle = 'brown';
+	ctx.fill();
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(x+80, y-15, 3, 0, 2 * Math.PI);
+	ctx.fillStyle = 'white';
+	ctx.fill();
+	ctx.strokeStyle = 'black';
+	ctx.stroke();
+
+//pupils2//
+	ctx.beginPath();
+	ctx.arc(x-80, y-15, 10, 0, 2 * Math.PI);
+	ctx.stroke();
+	ctx.fillStyle = 'brown';
+	ctx.fill();
+
+	ctx.beginPath();
+	ctx.arc(x-80, y-15, 3, 0, 2 * Math.PI);
+	ctx.fillStyle = 'white';
+	ctx.fill();
+	ctx.strokeStyle = 'black';
+	ctx.stroke();
+	
+//left noseline//
+ 	ctx.beginPath();
+ 	ctx.moveTo(x-26,y+78);
+	ctx.lineTo(275,252);
+	ctx.fillStyle = 'white';
+    ctx.fill();
+    ctx.strokeStyle = '#5C3207';
+    ctx.stroke();
+
+//mouth//
+	 ctx.beginPath();
+      ctx.arc(x, y+145, 55, 0, Math.PI, false);
+      ctx.closePath();
+      ctx.lineWidth = 3;
+      ctx.fillStyle = 'white';
+      ctx.fill();
+      ctx.strokeStyle = 'black';
+      ctx.stroke();
+
+//teeth//
+    ctx.moveTo(x+57,y+150);
+	ctx.lineTo(245,450);
+	ctx.lineTo(x-44,y+165);
+	ctx.lineTo(x+44,y+165);
+	ctx.lineTo(x+54,y+148);
+	ctx.fillStyle = '#AD0521';
+    ctx.fill();
+	ctx.stroke();
+
+//left nose//
+	ctx.beginPath();
+	ctx.arc(x+22, y+90, 10, -1.6, 0.5 * Math.PI);
+	ctx.fillStyle = '#8C4F12';
+    ctx.fill();
+    ctx.strokeStyle = '#5C3207';
+	ctx.stroke();
+
+//right nose//
+	ctx.beginPath();
+	ctx.arc(x-24, y+90, 10, 1.6, -0.5 * Math.PI);
+    ctx.strokeStyle = '#5C3207';
+    ctx.fill();
+	ctx.stroke();
+	
+//bottom nose//
+	  ctx.beginPath();
+      ctx.arc(x, y+125, 10, 0, Math.PI, false);
+      ctx.lineWidth = 3;
+      ctx.fillStyle = '#5C3207';
+      ctx.strokeStyle = '#5C3207';
+      ctx.stroke();
+
+//bottom nose//
+	  ctx.beginPath();
+      ctx.arc(x, y+90, 20, 0, Math.PI, false);
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = '#5C3207';
+      ctx.stroke();
+
+//beard2//
+ctx.fillStyle = "black";
+ctx.fillRect(x-20, y+210, 40, 50);
+
+</script>
+	
+</body>
+</html>
