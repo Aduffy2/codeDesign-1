@@ -10,9 +10,11 @@
   var y = canvas.width / 2;
   var x = canvas.height / 2;
 
-  //arc(x,y,r,startangle,endangle)
+  //arc(x,y,r,startangle,endangle)//
   
   ctx.lineWidth = 2; //thickens the lines//
+  
+  //creating a circle //
 
   function drawCircle(r){
      ctx.beginPath();
@@ -21,7 +23,7 @@
       
   };
 
-  //left semi circle//
+  //creating semi circle//
  ctx.beginPath();
  ctx.arc(x-86, 314, 15, -1.9, 0.6 * Math.PI);
  ctx.stroke();
@@ -32,7 +34,9 @@
  (function(){
 
   drawCircle(15);
-//add comment
+  
+//in order to get the oval shape the centerX and Y would have nagative numbers
+and here the var radius would be set to 6.5//
 
   //==============oval==================//
    var canvas = document.getElementById('myCanvas');
@@ -57,7 +61,7 @@
        // restore to original state
        ctx.restore();
 
-  //Top torso curve 1//
+  //Top torso curve ..using the method quadraticCurveTo //
 
  ctx.moveTo(x-90,120);
  ctx.quadraticCurveTo(x+15, 100, 390, 120);
@@ -69,7 +73,8 @@
  ctx.quadraticCurveTo(x+15, 80, 390, 100);
  ctx.stroke();
 
-  //Top torso curve //
+  //Top torso curve..using the method quadraticCurveTo
+  which would be parallel to top torso curve//
 
  ctx.moveTo(x-90,95);
  ctx.quadraticCurveTo(x+10, 75, 390, 95);
@@ -78,7 +83,7 @@
   //drawCircle(20);
   })();
 
- //Top circle//
+ //Top circle .. drawing the circle and maintaining the coordinate x to keep circk in the centre//
  ctx.beginPath();
  ctx.arc(x,29,12,0,2*Math.PI);
  ctx.stroke();
@@ -289,12 +294,11 @@
  ctx.lineTo(x-118-48, y+160);
  ctx.stroke();
 
-
  //right fistline//
  ctx.moveTo(x-118+20, y+70);
  ctx.lineTo(x-118+44, y+160);
  ctx.stroke();
-
+ 
  //-----------stroke lines----
  ctx.moveTo(x-118,y+69);
  ctx.lineTo(x-118,400);
@@ -346,10 +350,15 @@
  ctx.moveTo(x-30,y-290);
  ctx.quadraticCurveTo(x-35, y-275, 265, 50);
  ctx.stroke();
+ 
+/*function to create the rounded rectangles using the 
+x and y coordinates and the width and height of the rectangle
+the methods quadratic Curve To to curve the edges of the rectange anf then draw 
+lines considering the radius of the curves*/
 
  function roundRect(x, y, w, h, radius)
  {
-   
+ 
    var r = x + w;
    var b = y + h;
    ctx.beginPath();
@@ -397,8 +406,7 @@
  ctx.fillStyle = "#373738";
  ctx.fill();
 
-
- //middle squares//
+ //middle squares..drawing the squares with fill//
 
  ctx.beginPath();
  ctx.rect(x-25, y-140, 50, 110);
@@ -415,16 +423,12 @@
  ctx.fillStyle = "silver";
  ctx.fill();
 
- //--R2-D2---//
+ //--R2-D2- using the font and fillText method
+ to return the current font properties for text content//
 
  ctx.font = "40px Arial";
  ctx.fillText("R2-D2", 12, 49);
-
- //*****************************************//
-
-
+ 
   </script>
-
-  
   
  </body></html>
