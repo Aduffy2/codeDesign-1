@@ -34,7 +34,7 @@ var ctx = c.getContext("2d");
     ctx.strokeStyle = '#550000';
     ctx.stroke();
 
-      //road//
+      //road drawing a rectangle with a fill//
 	ctx.beginPath();
 	ctx.rect(0, 550, 1260, 680);
 	ctx.fillStyle = "#e2aa41";
