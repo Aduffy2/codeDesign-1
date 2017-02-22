@@ -13,7 +13,7 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
-//straight line//
+//Drawing a straight line//
 	ctx.moveTo(10, 65);
 	ctx.lineTo(10, 65);
 	ctx.stroke();
