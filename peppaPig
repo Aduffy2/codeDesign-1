@@ -315,6 +315,7 @@ ctx.stroke();
 //ctx.fillStyle = "#e2aa41";
 //ctx.fill();
 //ctx.rect(0, 0, 1260, 680);
+//hi;
 	
  	  </script>
 </body>
