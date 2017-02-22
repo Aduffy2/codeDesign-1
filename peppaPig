@@ -40,7 +40,7 @@ var ctx = c.getContext("2d");
 	ctx.fillStyle = "#e2aa41";
 	ctx.fill();
 
-    //front tyres1//
+    //drawing a circle for front tyres1//
     ctx.beginPath();
     ctx.arc(340, 510, 50, 0, Math.PI, false);
     ctx.closePath();
