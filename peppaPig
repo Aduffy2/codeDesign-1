@@ -24,7 +24,7 @@ var ctx = c.getContext("2d");
 	ctx.fillStyle = "#74dff7";
 	ctx.fill();
 
-//car shape//
+//drawing car shape//
     ctx.beginPath();
     ctx.arc(630, 500, 450, 0, Math.PI, true);
     ctx.closePath();
