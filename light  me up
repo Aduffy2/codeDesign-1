@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>light up the candle</title>
+</head>
+
+	<canvas id="myCanvas" width="400" class="img-responsive" height="300" style="border:1px solid black"></canvas>
+	<br /><br />
+	<!--used the onclick event so when the user click the button there would be a javascript execution,The setInterval() method calls the function drawing() at specified intervals (in milliseconds)-->
+	<input type="button" value="Light me Up" onclick="window.setInterval('drawing()',5)" />
+    
+
+    <script type="text/javascript">
+      var canvas = document.getElementById("myCanvas");
+
+	var context = canvas.getContext('2d');
+	var a=0;var b=0.1;
+
+	//using the createRadialGradient() method to create a circular gradient object.and the addColorStop to specify the two colors chosen and theor positions//
+	var gradient = context.createRadialGradient(200, 200, 200,200, 200, 0);
+	gradient.addColorStop(0, 'black');
+	gradient.addColorStop(1, 'darkgrey');
+	context.fillStyle = gradient;
+	context.fillRect(-5, -15, 410, 320);
+
+	// top of the candle
+	context.beginPath();
+	context.moveTo(190,150);
+	context.arc(200,150,22,0,Math.PI+0.1,false);
+	context.fillStyle='lightgrey';
+	context.fill();
+
+	// wax
+	context.beginPath()
+	context.moveTo(180,150);
+	context.rect(180,150,40,150);
+	context.fillStyle = 'lightgrey';
+	context.fill();
+
+	// the wick
+	context.beginPath();
+	context.moveTo(197,135);
+	context.fillStyle="black";
+	context.fill();
+	context.fillRect(197,135,5,15);
+	context.closePath();
+	function drawing(){
+
+	// for the movement of the flame
+	a=a+b;
+	if(a>=3){b=-0.3;}
+	if(a<=-3){b=0.3;}
+
+	// clear canvas
+	context.clearRect(0,0,400,300);
+
+	// top of the candle
+	context.beginPath();
+	context.moveTo(190,150);
+	context.arc(200,150,22,0,Math.PI+0.1,false);
+	context.fillStyle='lightgrey';
+	context.fill();
+
+	//Gradient background for when candle is lit//
+	var gradient = context.createRadialGradient(220, 220, 220,220, 220, 0);
+	gradient.addColorStop(0, '#353309');
+	gradient.addColorStop(1, '#e2de9a');
+	context.fillStyle = gradient;
+	context.fillRect(-5, -15, 410, 320);
+
+	//yellow part of flame using quadraticCurveTo//
+	context.beginPath();
+	context.moveTo(188,150);
+	context.quadraticCurveTo(200+a,18-a,212,150);
+	context.closePath();
+	context.fillStyle="#FFFE00";
+	context.fill();
+
+	//white part of flameusing quadraticCurveTo//
+	context.beginPath();
+	context.moveTo(193,150);
+	context.quadraticCurveTo(200+a,25-a,207,150);
+	context.closePath();
+	context.fillStyle="#E9DD00";
+	context.fill();
+
+	// orange part of flame using quadraticCurveTo//
+	context.beginPath();
+	context.moveTo(194,150);
+	context.quadraticCurveTo(200+a,90+a,206,150);
+	context.fillStyle="rgb(255, 148, 41)";
+	context.fill();
+
+	// the wick
+	context.beginPath();
+	context.moveTo(197,135);
+	context.fillStyle="black";
+	context.fill();
+	context.fillRect(197,135,5,15);
+	context.closePath();
+
+	// wax
+	context.beginPath()
+	context.moveTo(180,150);
+	context.rect(180,150,40,150);
+	context.fillStyle = 'lightgrey';
+	context.fill();
+	}
+	</script>
+<body>
+	
+</body>
+</html>
