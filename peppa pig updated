@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Peppa pig</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="1260" height="680" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.
+		</canvas>
+
+		<script>
+		var c = document.getElementById("myCanvas");
+	    var ctx = c.getContext("2d");
+
+		function myGradients () {
+
+	    var my_gradient = ctx.createLinearGradient(2, 10, 10, 200);
+		my_gradient.addColorStop(1, "#66d9ff");
+		my_gradient.addColorStop(0, "#ffff99");
+		ctx.fillStyle = my_gradient;
+		ctx.fillRect(0, 0, 1260, 680);
+		}
+
+		myGradients();
+
+	 	//sun...
+		function sunShine() {
+		
+		var x = 160,
+	    y = 85,
+	    // Radii of the white glow.
+	    innerRadius = 1,
+	    outerRadius = 50,
+	    // Radius of the entire circle.
+	    radius = 60;
+
+		var grd = ctx.createRadialGradient(x, y, innerRadius, x, y, outerRadius);
+		grd.addColorStop(0, 'yellow');
+		grd.addColorStop(1, '#ffb366');
+
+		ctx.arc(x, y, radius, 0, 2 * Math.PI);
+
+		ctx.fillStyle = grd;
+		ctx.fill();
+
+		//ctx.closePath();
+		};
+
+		sunShine();
+
+	    function drawLawn (){
+
+   		ctx.beginPath();
+		ctx.rect(0, 450, 1260, 100);
+		ctx.fillStyle = "#74c368";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.moveTo(1200, 450);
+		ctx.bezierCurveTo(530, -250, 620, 610, 250, 200);
+		ctx.lineTo(20,450);
+		ctx.fillStyle = "#74c368";
+		ctx.fill();
+		ctx.closePath();
+
+   		}
+   		drawLawn ();
+
+		drawCar();
+
+	    function drawCar(){
+		ctx.beginPath();
+		ctx.lineWidth=8;
+		
+		//quadraticCurveTo #left
+		ctx.beginPath();
+		ctx.moveTo(280, 320);
+		ctx.quadraticCurveTo(210, 430, 230, 500);
+		ctx.lineTo(1100,500);
+
+		//quadraticCurveTo #right
+		ctx.moveTo(1100, 500);
+		ctx.quadraticCurveTo(1105, 400, 1050, 320);
+		ctx.lineTo(280,320);
+
+		ctx.strokeStyle = '#a14844';
+		ctx.stroke();
+		ctx.fillStyle = '#e3645e';
+		ctx.fill();
+		}
+
+	   	drawCar();
+
+	   	function shirts(){
+
+	   	//daddys shirt//
+		ctx.beginPath();
+	    ctx.arc(595, 316, 80, 0, Math.PI, true);
+	    ctx.fillStyle = "#4cb4b5";
+	    ctx.fill();
+
+	    //mummys shirt//
+		ctx.beginPath();
+	    ctx.arc(710, 316, 80, 0, Math.PI, true);
+	    ctx.fillStyle = "orange";
+	    ctx.fill();
+
+	     //peppas shirt//
+		ctx.beginPath();
+	    ctx.arc(870, 316, 70, 0, Math.PI, true);
+	    ctx.fillStyle = "red";
+	    ctx.fill();
+
+	    //georges shirt//
+		ctx.beginPath();
+	    ctx.arc(980, 316, 50, 0, Math.PI, true);
+	    ctx.fillStyle = "#5d8acc";
+	    ctx.fill();
+
+		}
+
+		shirts();
+
+		function heads (){
+
+		//daddy pig head used closePath to draw the nose//
+	 	ctx.beginPath();
+	    ctx.arc(590, 198, 93, 4.7, Math.PI, false);
+	    ctx.lineWidth = 1.5;
+	    ctx.fillStyle = "#f1bcd8";
+	    ctx.fill();
+
+	    //daddypig beard//
+		ctx.moveTo(505,253);
+		ctx.lineTo(520,245);
+
+		ctx.moveTo(523,272);
+		ctx.lineTo(530,260);
+
+		ctx.moveTo(495,233);
+		ctx.lineTo(513,230);
+		ctx.stroke();
+
+		//mummy pig head//
+	    ctx.beginPath();
+	    ctx.arc(720, 220, 75, 4.7, Math.PI, false);
+
+		//daddy pigs nose drawing//
+		ctx.moveTo(505, 202);//bottomline
+		ctx.lineTo(428, 159);
+		ctx.lineTo(483,101);
+		ctx.lineTo(611, 107);
+	    ctx.fill();
+
+		//mummy pigs nose drawing//
+		ctx.moveTo(720, 145);
+		ctx.lineTo(620, 145);
+		ctx.lineTo(615,190);
+		ctx.lineTo(654, 230);
+		ctx.stroke();
+	    ctx.fill();
+
+		//peppa pigs nose drawing//
+		ctx.moveTo(720, 145);
+		ctx.lineTo(620, 145);
+		ctx.lineTo(615,190);
+		ctx.lineTo(654, 230);
+
+		//peppa pig head//
+	    ctx.beginPath();
+	    ctx.arc(870,240, 60, 4.7, Math.PI, false);
+	    ctx.stroke();
+	    ctx.fill();
+
+		//georges pig head//
+	    ctx.beginPath();
+	    ctx.arc(980, 240, 50, 4.7, Math.PI, false);
+	    ctx.fill();
+
+		//georges nose drawing//
+		ctx.moveTo(980, 190);
+		ctx.lineTo(912, 195);
+		ctx.lineTo(916,227);
+		ctx.lineTo(934, 240);
+		//ctx.stroke();
+	    ctx.fill();
+
+	    //mummys right bottom lashes//
+		ctx.moveTo(730,201);
+		ctx.lineTo(730,193);
+		//ctx.stroke();
+
+		ctx.moveTo(720,189);
+		ctx.lineTo(716,196);
+		//ctx.stroke();
+
+		ctx.moveTo(710,183);
+		ctx.lineTo(718,181);
+		//ctx.stroke();
+
+		//mummys left bottom lashes//
+		ctx.moveTo(680,180);
+		ctx.lineTo(680,173);
+		//ctx.stroke();
+
+		ctx.moveTo(670,168);
+		ctx.lineTo(666,175);
+		//ctx.stroke();
+
+		ctx.moveTo(660,162);
+		ctx.lineTo(668,160);
+		ctx.stroke();
+
+		//nose circle mummy pig//
+		ctx.beginPath();
+		ctx.arc(625,173,30,0,2*Math.PI);
+		ctx.stroke();
+		ctx.fill();
+		
+		//nose circle daddy pig//
+		ctx.beginPath();
+		ctx.arc(460,135,42,0,2*Math.PI);
+		ctx.stroke();
+		ctx.fill();
+
+		//drawing peppas nose//
+		ctx.moveTo(880, 181);
+		ctx.lineTo(805, 180);
+		ctx.lineTo(782,210);
+		ctx.lineTo(820, 250);
+	    ctx.fill();
+
+	    //nose circle George pig//
+		ctx.beginPath();
+		ctx.arc(915,209,19,0,2*Math.PI);
+		ctx.stroke();
+		ctx.fill();
+		
+		//nose circle peppa pig//
+		ctx.beginPath();
+		ctx.arc(800,200,25,0,2*Math.PI);
+		ctx.stroke();
+		ctx.fill();
+
+		//daddys smile//
+		ctx.beginPath();
+		ctx.arc(543, 210, 22, 1.1, 1.1 * Math.PI, false);
+		ctx.stroke();
+
+		////mummy pigs rosey cheeck//
+		ctx.beginPath();
+		ctx.arc(750,230,20,0,2*Math.PI);
+		ctx.fillStyle = ' #f19fc5';
+		ctx.fill();
+		
+		//george rosey cheeks//
+		ctx.beginPath();
+		ctx.arc(990,250,15,0,2*Math.PI);
+		ctx.fillStyle = ' #f19fc5';
+		ctx.fill();
+
+		//peppa pigs mouth//
+		ctx.beginPath();
+		ctx.arc(855, 260, 15, 1.1, 1.1 * Math.PI, false);
+		ctx.stroke();
+
+		//george pigs mouth//
+		ctx.beginPath();
+		ctx.arc(965, 260, 10, 1.0, 1.1 * Math.PI, false);
+		ctx.stroke();
+		};
+
+		//daddys ear1//
+		ctx.beginPath();
+	    ctx.arc(660, 120, 20, 1.5, Math.PI, true);
+	    ctx.lineWidth = 2;
+	    ctx.fillStyle = "#f1bcd8";
+	    ctx.fill();
+	    ctx.stroke();
+
+		//daddys ear 2/////
+	    ctx.beginPath();
+	    ctx.arc(610, 104, 15, 0.4, Math.PI, true);
+	    ctx.lineWidth = 2;
+	    ctx.fillStyle = "#f1bcd8";
+	    ctx.fill();
+	    ctx.stroke();
+
+		//mummys ear1//
+		ctx.beginPath();
+	    ctx.arc(785, 160, 20, 1.5, Math.PI, true);
+	    ctx.lineWidth = 2;
+	    ctx.fillStyle = "f1bcd8";
+	    ctx.fill();
+	    ctx.stroke();
+
+		//mummys ear 2
+	    ctx.beginPath();
+	    ctx.arc(730, 145, 15, 0.1, Math.PI, true);
+	    ctx.lineWidth = 2;
+	    ctx.fillStyle = "f1bcd8";
+	    ctx.fill();
+	    ctx.stroke();
+
+		//peppas ears
+		ctx.beginPath();
+	    ctx.arc(915, 190, 12, 1.5, Math.PI, true);
+	    ctx.lineWidth = 2;
+	    ctx.fillStyle = "f1bcd8";
+	    ctx.fill();
+	    ctx.stroke();
+
+	    ctx.beginPath();
+	    ctx.arc(870, 180, 10, 0.1, Math.PI, true);
+	    ctx.lineWidth = 2;
+	    ctx.fillStyle = "f1bcd8";
+	    ctx.fill();
+	    ctx.stroke();
+
+		//georges ears
+		ctx.beginPath();
+	    ctx.arc(1020, 198, 12, 1.5, Math.PI, true);
+	    ctx.fillStyle = "f1bcd8";
+	    ctx.fill();
+	    ctx.stroke();
+
+	    ctx.beginPath();
+	    ctx.arc(990, 189, 10, 0.3, Math.PI, true);
+	    ctx.fillStyle = '#f1bcd8';
+	    ctx.fill();
+	    ctx.stroke();
+
+		heads();
+
+		function eyes(){
+
+		//daddy pigs eyes1//
+		ctx.beginPath();
+		ctx.arc(580,140,12,0,2*Math.PI);
+		ctx.stroke();
+		ctx.fillStyle = 'white';
+		ctx.fill();
+
+		//mummy pigs left eyes1//
+		ctx.beginPath();
+		ctx.arc(680,160,12,0,2*Math.PI);
+		ctx.stroke();
+		ctx.fillStyle = 'white';
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.arc(730,180,12,0,2*Math.PI);
+		ctx.stroke();
+		ctx.fillStyle = 'white';
+		ctx.fill();
+
+		//peppas pigs left eyes1//
+		ctx.beginPath();
+		ctx.arc(841,196,10,0,2*Math.PI);
+		ctx.stroke();
+		ctx.fillStyle = 'white';
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.arc(879,209,10,0,2*Math.PI);
+		ctx.stroke();
+		ctx.fillStyle = 'white';
+		ctx.fill();
+
+		//georges pigs left eyes1//
+		ctx.beginPath();
+		ctx.arc(952,204,9,0,2*Math.PI);
+		ctx.fillStyle = 'white';
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.arc(986,216,9,0,2*Math.PI);
+		ctx.stroke();
+
+		ctx.fillStyle = 'white';
+		ctx.fill();
+
+		//daddys pupil//
+		ctx.beginPath();
+		ctx.arc(574,145,2,0,2*Math.PI);
+		ctx.lineWidth = 3;
+		ctx.stroke();
+
+		//daddy pigs eyes2//
+		ctx.beginPath();
+		ctx.arc(530,124,12,0,2*Math.PI);
+		ctx.stroke();
+		ctx.fillStyle = 'white';
+		ctx.fill();
+
+		//daddys pupil//
+		ctx.beginPath();
+		ctx.arc(522,126,2,0,2*Math.PI);
+		ctx.stroke();
+
+		//mummys pupil//
+		ctx.beginPath();
+		ctx.arc(724,180,2,0,2*Math.PI);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(672,160,2,0,2*Math.PI);
+		ctx.stroke();
+
+		//peppas pupil//
+		ctx.beginPath();
+		ctx.arc(874,210,2,0,2*Math.PI);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(836,197,2,0,2*Math.PI);
+		ctx.stroke();
+
+		//georges pupil//
+		ctx.beginPath();
+		ctx.arc(982,217,2,0,2*Math.PI);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(948,204,2,0,2*Math.PI);
+		ctx.stroke();
+		}
+
+		eyes();
+
+		function fenders(){
+		//front fender1//
+	    ctx.beginPath();
+	    ctx.arc(500, 500, 100, 0, Math.PI, true);
+	    ctx.lineWidth = 6;
+	    ctx.fillStyle = "#e3645e";
+	    ctx.fill();
+
+	    //back fender2// 
+	    ctx.arc(920, 500, 100, 0, Math.PI, true);
+	    ctx.closePath();
+	    ctx.stroke();
+		};
+
+	    fenders();
+
+		//road//
+		function drawRoad(){
+
+		ctx.beginPath();
+		ctx.rect(0, 550, 1260, 680);
+		ctx.fillStyle = "#6a7f9a";
+		ctx.fill();
+		}
+
+		drawRoad();
+
+	    function shadow(){
+		ctx.beginPath();
+		ctx.rect(250, 550, 900, 10);
+		ctx.rect(270, 560, 900, 10);
+		ctx.rect(290, 570, 900, 10);
+		ctx.fillStyle = "#4d6071";
+		ctx.fill();
+		}
+
+		shadow();
+
+		function tyres() {
+		//front tyres1//
+	    ctx.beginPath();
+	    ctx.arc(340, 504, 50, 0, Math.PI, false);
+	    ctx.closePath();
+	    ctx.fillStyle = '#3b3c3d';
+	    ctx.fill();
+
+		//front tyres1//
+	    ctx.beginPath();
+	    ctx.arc(760, 504, 50, 0, Math.PI, false);
+	    ctx.closePath();
+	    ctx.fillStyle = '#3b3c3d';
+	    ctx.fill();
+
+		//front tyres2//
+	    ctx.beginPath();
+	    ctx.arc(500, 500, 90, 0, Math.PI, false);
+	    ctx.closePath();
+	    ctx.lineWidth = 5;
+	    ctx.fillStyle = 'grey';
+	    ctx.fill();
+
+		//back tyre1//
+	    ctx.beginPath();
+	    ctx.arc(920, 500, 90, 0, Math.PI, false);
+	    ctx.fill();
+	    ctx.strokeStyle = '#364145';
+
+	    ctx.beginPath();
+	    ctx.arc(500, 500, 50, 0, Math.PI, false);
+	    ctx.closePath();
+	    ctx.fillStyle = '#364145';
+	    ctx.fill();
+
+		//alloy//
+	   	ctx.beginPath();
+	    ctx.arc(920, 500, 50, 0, Math.PI, false);
+	    ctx.closePath();
+	    ctx.fill();
+	    
+		};
+
+		tyres();
+
+		function nostrils(){
+
+		//daddy nosetrills//
+		ctx.beginPath();
+		ctx.arc(470,135,2,0,2*Math.PI);
+		ctx.lineWidth = 2;
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(443,123,2,0,2*Math.PI);
+		ctx.stroke();
+
+		//mummy pigs nostrills//
+		ctx.beginPath();
+		ctx.arc(640,175,2,0,2*Math.PI);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(613,163,2,0,2*Math.PI);
+		ctx.stroke();
+
+		//peppas pigs nostrills
+		ctx.beginPath();
+		ctx.arc(810,198,2,0,2*Math.PI);
+		ctx.lineWidth = 2;
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(795,192,2,0,2*Math.PI);
+		ctx.stroke();
+
+		//george pigs nostrills
+		ctx.beginPath();
+		ctx.arc(920,210,2,0,2*Math.PI);
+		ctx.lineWidth = 2;
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(906,205,2,0,2*Math.PI);
+		ctx.stroke();
+
+		}
+
+		nostrils();
+
+		function Spectacles(){
+
+		//daddy pigs spectacles//
+
+		ctx.beginPath();
+		ctx.arc(530, 123, 22, 0, 2 * Math.PI);
+		ctx.lineWidth = 5;
+		ctx.fillStyle = 'black';
+
+		ctx.moveTo(560, 135);
+		ctx.lineTo(550, 130);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(580, 140, 22, 0, 2 * Math.PI);
+		ctx.stroke();
+
+		}
+
+		Spectacles ();
+
+        function steer(){
+
+		//steer
+		ctx.beginPath();
+		ctx.arc(380, 240, 40, 0, 2 * Math.PI);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(410, 270);
+		ctx.lineTo(350, 210);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(420, 223);
+		ctx.lineTo(345, 260);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(380,240);
+		ctx.quadraticCurveTo(340, 280, 340, 320);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(380, 240, 10, 0, 2 * Math.PI);
+		ctx.stroke();
+		ctx.fill();
+
+		}
+		steer();
+
+		//daddys hand...
+		function drawHand(){
+
+		ctx.beginPath();
+		ctx.moveTo(400, 260);
+		ctx.quadraticCurveTo(400, 300, 550, 300);
+		ctx.lineWidth = 10;
+		ctx.strokeStyle="#f1bcd8";
+		ctx.stroke();
+		}
+		drawHand ();
+
+
+		function redLips(){
+
+		//mummy pigs mouth//
+		ctx.beginPath();
+		ctx.arc(690, 235, 20, 1.1, 1.0 * Math.PI, false);
+		ctx.lineWidth = 3;
+		//ctx.fill();
+		ctx.strokeStyle="#FF0000";
+		ctx.stroke();
+
+		}
+
+		redLips ();
+
+		function headLights (){
+
+		var x = 240;
+      	var y =  200;
+      	var r = 18;
+
+      	// save state
+      	//ctx.save();
+
+      	// scale context horizontally
+      	ctx.scale(1, 2);
+
+	    // drawn circle which will be stretched into an oval showing the headlights in an angle
+
+	    ctx.beginPath();
+	    ctx.arc(x, y, r, 0, 2 * Math.PI, false);
+
+	    ctx.arc(x+100, y, r, 0, 2 * Math.PI, false);
+
+	    // restore to original state
+	    ctx.restore();
+		}
+
+		headLights ();
+
+
+		//drawing line using lineTo
+
+		function drawLines(){
+
+		//rectangle for door handle
+		ctx.fillRect(730, 170, 50, 10);
+		ctx.fillStyle = "#364145";
+		ctx.stroke
+
+		//bumper
+		ctx.fillRect(1080, 233, 40, 20);
+		ctx.strokeStyle = '#364145';
+		ctx.stroke();
+
+		//door line 1
+		ctx.moveTo(620,160);
+		ctx.lineTo(620,250);
+
+		//door line 2
+		ctx.moveTo(800,160);
+		ctx.lineTo(800,250);
+		//ctx.closePath();
+		ctx.strokeStyle=('#a14844');
+		ctx.stroke();
+			
+		//wind screen
+		ctx.moveTo(620,110);
+		ctx.lineTo(620,158);
+		ctx.lineTo(280,160);
+		ctx.lineTo(280,110);
+		ctx.lineTo(625,110);
+		ctx.lineWidth = 5;
+
+		//Turn transparency on----https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_canvas_globalalpha..intersting globalAlpha property.
+
+		ctx.globalAlpha = 0.4;
+		ctx.strokeStyle = '#8489dd';
+		ctx.stroke();
+		ctx.fillStyle = 'white';
+    	ctx.fill();
+
+		 }
+
+		 drawLines ();
+
+		</script>
+
+	</body>
+	</html>	
